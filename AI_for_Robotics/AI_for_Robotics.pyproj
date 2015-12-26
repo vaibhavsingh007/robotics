@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f33601d1-5eae-4478-9bfa-fbe8711aff16</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Localization.py</StartupFile>
+    <StartupFile>Localization2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Localization.py" />
+    <Compile Include="Localization2.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
