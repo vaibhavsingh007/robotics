@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f33601d1-5eae-4478-9bfa-fbe8711aff16</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Localization2.py</StartupFile>
+    <StartupFile>Localization\Localization2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,10 +22,26 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Localization.py" />
-    <Compile Include="Localization2.py">
+    <Compile Include="KalmanFilters\KalmanFilter2D.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="KalmanFilters\KalmanFilter4D.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KalmanFilters\MaximizeGaussian.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KalmanFilters\MeasurementUpdate.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Localization\Localization.py" />
+    <Compile Include="Localization\Localization2.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="KalmanFilters\" />
+    <Folder Include="Localization\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

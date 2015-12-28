@@ -1,3 +1,4 @@
+# MONTE CARLO ROBOT LOCALIZATION (aka Histogram Filters)
 # The function localize takes the following arguments:
 #
 # colors:
