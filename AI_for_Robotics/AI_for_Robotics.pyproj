@@ -38,10 +38,23 @@
     <Compile Include="Localization\Localization2.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ParticleFilters\CyclicMotion.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParticleFilters\MovingRobot.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParticleFilters\ParticleFiltersFinalPA.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParticleFilters\Resampling.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="KalmanFilters\" />
     <Folder Include="Localization\" />
+    <Folder Include="ParticleFilters\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
