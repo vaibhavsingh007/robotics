@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f33601d1-5eae-4478-9bfa-fbe8711aff16</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Localization\Localization2.py</StartupFile>
+    <StartupFile>Search\OptimumPolicy.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -50,10 +50,30 @@
     <Compile Include="ParticleFilters\Resampling.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Search\AStarSearch.py" />
+    <Compile Include="Search\LefTurnPolicy_Attempt2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Search\OptimumPolicy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Search\LefTurnPolicy_Attempt1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Search\ShortestPath.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Search\NavigationPath.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Search\StochasticMotion.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="KalmanFilters\" />
     <Folder Include="Localization\" />
+    <Folder Include="Search\" />
     <Folder Include="ParticleFilters\" />
   </ItemGroup>
   <PropertyGroup>
