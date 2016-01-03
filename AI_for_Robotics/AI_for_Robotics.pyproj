@@ -50,6 +50,30 @@
     <Compile Include="ParticleFilters\Resampling.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PidControl\ConstrainedSmoothing.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PidControl\CyclicSmoothing.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PidControl\PathSmoothing.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PidControl\PController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PidControl\PDController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PidControl\PIDController.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PidControl\RaceTrackControl.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PidControl\Twiddle.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Search\AStarSearch.py" />
     <Compile Include="Search\LefTurnPolicy_Attempt2.py">
       <SubType>Code</SubType>
@@ -73,6 +97,7 @@
   <ItemGroup>
     <Folder Include="KalmanFilters\" />
     <Folder Include="Localization\" />
+    <Folder Include="PidControl\" />
     <Folder Include="Search\" />
     <Folder Include="ParticleFilters\" />
   </ItemGroup>
