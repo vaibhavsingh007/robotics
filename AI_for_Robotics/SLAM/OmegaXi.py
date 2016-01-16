@@ -368,21 +368,27 @@ def doit(initial_pos, move1, move2, z0, z1, z2):
             xi[j+1][0] += m
 
     # Update for landmarks
+    lIndex = len(params) + 0    # Landmark 0
     for i in range(len(l1d)):
         if l1d[i] != -1:
             x = positions[i]   # current location
             lx = l1d[i]    # landmark distance from x
             l = x + lx          # landmark location
 
-            lIndex = len(params)    # TODO: handle landmark distance omega index 
-                                    #..when more than one landmarks are present. Eg. lIndex += 1 for l2
-            omega[i][i] += 1
-            omega[lIndex][lIndex] += 1
-            omega[i][lIndex] -= 1
-            omega[lIndex][i] -= 1
+            confidence = 1
+            if i == len(params) - 1:
+                confidence = 5
+
+            omega[i][i] += 1*confidence
+            omega[lIndex][lIndex] += 1*confidence
+            omega[i][lIndex] -= 1*confidence
+            omega[lIndex][i] -= 1*confidence
             
-            xi[i][0] += -lx
-            xi[lIndex][0] += lx
+            xi[i][0] += -lx*confidence
+            xi[lIndex][0] += lx*confidence
+
+    # Hardcoding last measurement update with a confidence (maximizer) of 5
+
 
     # Calculate mu
     omega = matrix(omega)
@@ -390,6 +396,6 @@ def doit(initial_pos, move1, move2, z0, z1, z2):
     mu = omega.inverse() * xi
     return mu
 
-print doit(-3, 5, 3, 10, 5, 2)
+print doit(-3, 5, 3, 10, 5, 1)
 
 
