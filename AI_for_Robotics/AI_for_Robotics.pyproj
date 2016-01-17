@@ -93,10 +93,20 @@
     <Compile Include="Search\StochasticMotion.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SLAM\OmegaXi.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SLAM\SegmentedCTE.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SLAM\SLAM.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="KalmanFilters\" />
     <Folder Include="Localization\" />
+    <Folder Include="SLAM\" />
     <Folder Include="PidControl\" />
     <Folder Include="Search\" />
     <Folder Include="ParticleFilters\" />

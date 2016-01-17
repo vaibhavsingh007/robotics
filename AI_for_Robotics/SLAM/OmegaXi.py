@@ -338,6 +338,9 @@ def doit(initial_pos, move1, move2, z0, z1, z2):
     positions = [[0.0] for i in range(pLen)]
     pos = 0
 
+    moC = 1     # motion confidence
+    meC = 0.5   # measurement confidence
+
     for i in range(len(params)):
         pos += params[i]
         positions[i] = pos
@@ -352,8 +355,8 @@ def doit(initial_pos, move1, move2, z0, z1, z2):
             m = params[j+1]    # move
             y = x + m          # next location
 
-            omega[j][j+1] -= 1
-            omega[j+1][j] -= 1
+            omega[j][j+1] -= 1*moC
+            omega[j+1][j] -= 1*moC
 
             #if y > 0:   # visualize the eqn. x + m = y
             #    omega[j][j+1] -= 1
@@ -364,8 +367,8 @@ def doit(initial_pos, move1, move2, z0, z1, z2):
             #else:
             #    omega[j+1][j] += 1
             
-            xi[j][0] += -m
-            xi[j+1][0] += m
+            xi[j][0] += -m*moC
+            xi[j+1][0] += m*moC
 
     # Update for landmarks
     lIndex = len(params) + 0    # Landmark 0
@@ -375,20 +378,13 @@ def doit(initial_pos, move1, move2, z0, z1, z2):
             lx = l1d[i]    # landmark distance from x
             l = x + lx          # landmark location
 
-            confidence = 1
-            if i == len(params) - 1:
-                confidence = 5
-
-            omega[i][i] += 1*confidence
-            omega[lIndex][lIndex] += 1*confidence
-            omega[i][lIndex] -= 1*confidence
-            omega[lIndex][i] -= 1*confidence
+            omega[i][i] += 1*meC
+            omega[lIndex][lIndex] += 1*meC
+            omega[i][lIndex] -= 1*meC
+            omega[lIndex][i] -= 1*meC
             
-            xi[i][0] += -lx*confidence
-            xi[lIndex][0] += lx*confidence
-
-    # Hardcoding last measurement update with a confidence (maximizer) of 5
-
+            xi[i][0] += -lx*meC
+            xi[lIndex][0] += lx*meC
 
     # Calculate mu
     omega = matrix(omega)
@@ -396,6 +392,6 @@ def doit(initial_pos, move1, move2, z0, z1, z2):
     mu = omega.inverse() * xi
     return mu
 
-print doit(-3, 5, 3, 10, 5, 1)
+print doit(5, 7, 2, 2, 4, 6)
 
 
