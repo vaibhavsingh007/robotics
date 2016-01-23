@@ -102,10 +102,14 @@
     <Compile Include="SLAM\SLAM.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Exam\WarehouseRobot.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="KalmanFilters\" />
     <Folder Include="Localization\" />
+    <Folder Include="Exam\" />
     <Folder Include="SLAM\" />
     <Folder Include="PidControl\" />
     <Folder Include="Search\" />
