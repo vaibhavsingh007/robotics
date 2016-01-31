@@ -96,6 +96,9 @@
     <Compile Include="SLAM\OmegaXi.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SLAM\OnlineSLAM.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SLAM\SegmentedCTE.py">
       <SubType>Code</SubType>
     </Compile>
